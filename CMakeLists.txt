@@ -55,14 +55,14 @@ set(HAL_INC             lib/stm32f4xx_hal/Inc)
 # HAL source files (only include what you use — add more as needed)
 # -------------------------------------------------------------------
 file(GLOB HAL_SOURCES
+    lib/cmsis_device_f4/Source/Templates/system_stm32f4xx.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal_cortex.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal_rcc.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal_gpio.c
+    lib/stm32f4xx_hal/Src/stm32f4xx_hal_dma.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal_uart.c
     lib/stm32f4xx_hal/Src/stm32f4xx_hal_spi.c
-    lib/stm32f4xx_hal/Src/stm32f4xx_hal_tim.c
-    lib/stm32f4xx_hal/Src/stm32f4xx_hal_dma.c
 )
 
 # -------------------------------------------------------------------
@@ -98,7 +98,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 
 # Linker
 target_link_options(${PROJECT_NAME} PRIVATE
-    -T${CMAKE_SOURCE_DIR}/STM32F407VGTx_FLASH.ld
+    -T${CMAKE_SOURCE_DIR}/STM32F407VGTX_FLASH.ld
     -Wl,--gc-sections           # Remove unused sections
     -Wl,-Map=${PROJECT_NAME}.map
     --specs=nano.specs          # Use newlib-nano (smaller)
