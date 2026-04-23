@@ -12,7 +12,7 @@ Built from scratch with CMake and a custom ARM toolchain — no STM32CubeIDE dep
 ## Hardware
 - STM32F4 Discovery (STM32F407VGT6)
   - 1MB Flash, 192KB RAM (128KB SRAM + 64KB CCMRAM)
-  - Cortex-M4 @ up to 168MHz, single-precision FPU
+  - Cortex-M4 @ up to 168MHz, single-precision FPU 
 
 ## Building
 ### Prerequisites
